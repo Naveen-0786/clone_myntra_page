@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Whitney', 'Helvetica Neue', Arial, sans-serif;
+  color: #282c3f;
+  background: #f4f4f5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ff3f6c; border-radius: 3px; }
+
+/* Myntra pink underline nav links */
+.nav-link {
+  position: relative;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #282c3f;
+  padding-bottom: 4px;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff3f6c;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: #ff3f6c; }
+
+/* Hero banner gradient overlay */
+.hero-gradient {
+  background: linear-gradient(135deg, #ff3f6c 0%, #ff905a 50%, #ffb703 100%);
+}
+
+/* Product card hover */
+.product-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+/* Wishlist heart animation */
+.heart-btn { transition: transform 0.2s, color 0.2s; }
+.heart-btn:hover { transform: scale(1.25); color: #ff3f6c; }
+.heart-btn.active { color: #ff3f6c; animation: bounceIn 0.4s ease-out; }
+
+/* Search bar focus glow */
+.search-input:focus {
+  outline: none;
+  border-color: #ff3f6c;
+  box-shadow: 0 0 0 2px rgba(255,63,108,0.15);
+}
+
+/* Bag badge bounce */
+.badge-count {
+  animation: bounceIn 0.35s ease-out;
+}
+
+/* Dropdown mega menu */
+.mega-menu {
+  animation: slideDown 0.25s ease-out;
+}
+
+/* Banner marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+/* Fade in sections on scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Category chip */
+.cat-chip {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.cat-chip:hover {
+  background: #ff3f6c;
+  color: white;
+  transform: scale(1.04);
+}
+
+/* Add to bag button */
+.btn-bag {
+  background: white;
+  color: #ff3f6c;
+  border: 1px solid #ff3f6c;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.btn-bag:hover {
+  background: #ff3f6c;
+  color: white;
+  transform: translateY(-1px);
+}
